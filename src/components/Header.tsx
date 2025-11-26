@@ -37,6 +37,13 @@ export function Header() {
             >
               Notification
             </button>
+            <a href="https://www.buymeacoffee.com/omarnaru" target="_blank" rel="noreferrer">
+              <img 
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
+                alt="Buy Me A Coffee" 
+                className="h-10 w-auto"
+              />
+            </a>
             <button 
               className="px-4 py-2 bg-gray-800 text-gray-500 rounded-lg cursor-not-allowed"
               disabled
