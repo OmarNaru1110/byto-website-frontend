@@ -11,7 +11,7 @@ export function Header() {
   };
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -23,36 +23,30 @@ export function Header() {
             <img src={bytoLogo} alt="Byto" className="w-8 h-8" />
             <span className="tracking-tight">byto</span>
           </div>
-          
+
           <nav className="hidden md:flex items-center gap-8">
-            <button 
+            <button
               onClick={() => scrollToSection("features")}
               className="text-gray-400 hover:text-white transition-colors"
             >
               Features
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection("notify")}
               className="text-gray-400 hover:text-white transition-colors"
             >
               Notification
             </button>
-            <a href="https://www.buymeacoffee.com/omarnaru" target="_blank" rel="noreferrer">
-              <img 
-                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
-                alt="Buy Me A Coffee" 
-                className="h-10 w-auto"
-              />
-            </a>
-            <button 
+
+            <button
               className="px-4 py-2 bg-gray-800 text-gray-500 rounded-lg cursor-not-allowed"
               disabled
             >
               Download (Soon)
             </button>
           </nav>
-          
-          <button 
+
+          <button
             onClick={() => scrollToSection("notify")}
             className="md:hidden px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
           >
