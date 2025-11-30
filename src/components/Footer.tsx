@@ -40,13 +40,13 @@ export function Footer() {
             <h3 className="mb-4 text-sm">Connect</h3>
             <div className="flex gap-3">
               <a 
-                href="#" 
+                href="https://github.com/OmarNaru1110" 
                 className="w-10 h-10 bg-[#141414] border border-[#262626] rounded-lg flex items-center justify-center hover:border-blue-600/50 transition-all"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://x.com/OmarNaru1110" 
                 className="w-10 h-10 bg-[#141414] border border-[#262626] rounded-lg flex items-center justify-center hover:border-blue-600/50 transition-all"
               >
                 <Twitter className="w-5 h-5" />
