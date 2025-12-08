@@ -1,4 +1,4 @@
-import { Download, Github, Twitter } from "lucide-react";
+import { Github, Twitter, Linkedin } from "lucide-react";
 import bytoLogo from "figma:asset/e1c6c4d1df3cefc4435d7cc603c42e22f058f10f.png";
 
 export function Footer() {
@@ -26,12 +26,6 @@ export function Footer() {
                   Features
                 </a>
               </li>
-            
-              <li>
-                <a href="#notify" className="text-gray-400 hover:text-white transition-colors">
-                  Get Notified
-                </a>
-              </li>
             </ul>
           </div>
           
@@ -41,31 +35,35 @@ export function Footer() {
             <div className="flex gap-3">
               <a 
                 href="https://github.com/OmarNaru1110" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-[#141414] border border-[#262626] rounded-lg flex items-center justify-center hover:border-blue-600/50 transition-all"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a 
                 href="https://x.com/OmarNaru1110" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-[#141414] border border-[#262626] rounded-lg flex items-center justify-center hover:border-blue-600/50 transition-all"
               >
                 <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/omarnaru/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-[#141414] border border-[#262626] rounded-lg flex items-center justify-center hover:border-blue-600/50 transition-all"
+              >
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
         
         {/* Bottom */}
-        <div className="pt-8 border-t border-[#262626] flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+        <div className="pt-8 border-t border-[#262626] text-center text-sm text-gray-400">
           <p>© 2025 Byto. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms
-            </a>
-          </div>
         </div>
       </div>
     </footer>

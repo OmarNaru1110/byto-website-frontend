@@ -6,36 +6,15 @@ import notificationIcon from "figma:asset/e1c6c4d1df3cefc4435d7cc603c42e22f058f1
 export function NotificationService() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const baseUrl = import.meta.env.VITE_API_BASE_URL;
-      const response = await fetch(`${baseUrl}/subscribe`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-        setEmail("");
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 3000);
-      } else {
-        console.error("Failed to subscribe");
-      }
-    } catch (error) {
-      console.error("Error subscribing:", error);
-    } finally {
-      setIsLoading(false);
-    }
+    // Mock submission
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setEmail("");
+    }, 3000);
   };
 
   return (
@@ -79,26 +58,19 @@ export function NotificationService() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      disabled={isLoading || submitted}
-                      className="w-full pl-12 pr-4 py-4 bg-[#0a0a0a] border border-[#262626] rounded-xl focus:border-blue-600 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full pl-12 pr-4 py-4 bg-[#0a0a0a] border border-[#262626] rounded-xl focus:border-blue-600 focus:outline-none transition-colors"
                     />
                   </div>
                   
                   <motion.button
                     type="submit"
-                    disabled={isLoading || submitted}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-4 bg-blue-600 hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed rounded-xl transition-colors flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-blue-600 hover:bg-blue-700 rounded-xl transition-colors flex items-center justify-center gap-2"
                   >
-                    {isLoading ? (
+                    {submitted ? (
                       <>
                         <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Subscribing...
-                      </>
-                    ) : submitted ? (
-                      <>
-                        <Bell className="w-5 h-5" />
                         Subscribed!
                       </>
                     ) : (
