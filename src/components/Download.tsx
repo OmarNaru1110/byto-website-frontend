@@ -95,12 +95,6 @@ export function Download() {
                   </li>
                 </ol>
 
-                <div className="flex gap-3 p-4 bg-orange-600/10 border border-orange-600/20 rounded-lg mt-6">
-                  <AlertCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-gray-300">
-                    <span className="text-orange-400">Note:</span> When checking for updates, run byto as administrator
-                  </p>
-                </div>
               </div>
             </div>
 
