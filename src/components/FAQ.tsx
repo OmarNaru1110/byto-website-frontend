@@ -11,10 +11,6 @@ export function FAQ() {
       answer: "Yes, the app will be available for free when it launches."
     },
     {
-      question: "When will it be available?",
-      answer: "Soon! Join the notification list to be informed the moment Byto launches."
-    },
-    {
       question: "What sites does Byto support?",
       answer: "Byto supports all platforms that yt-dlp supports, which includes YouTube, Vimeo, Twitch, and hundreds of other sites."
     },
