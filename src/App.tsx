@@ -9,38 +9,25 @@ import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
 import { Download } from "./components/Download";
 import { KoFiButton } from "./components/KoFiButton";
-import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState("home");
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      setCurrentPage(hash || "home");
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-    handleHashChange();
-
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
-      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      {currentPage === "download" ? (
-        <Download />
-      ) : (
-        <>
-          <Hero />
-          <IntroSection />
-          <Features />
-          <HowItWorks />
-          <WhyByto />
-          <FAQ />
-        </>
-      )}
+      <Header />
+      <Routes>
+        <Route path="/download" element={<Download />} />
+        <Route path="/" element={
+          <>
+            <Hero />
+            <IntroSection />
+            <Features />
+            <HowItWorks />
+            <WhyByto />
+            <FAQ />
+          </>
+        } />
+      </Routes>
       <KoFiButton />
       <Footer />
     </div>

@@ -1,17 +1,16 @@
 import { Download } from "lucide-react";
 import { motion } from "motion/react";
-import bytoLogo from "figma:asset/e1c6c4d1df3cefc4435d7cc603c42e22f058f10f.png";
+import bytoLogo from "figma:asset/e1c6c4d1df3cefc4435d7cc603c42e22f058f10f.png"; // Using existing path
+import { useNavigate, useLocation } from "react-router-dom";
 
-interface HeaderProps {
-  currentPage: string;
-  setCurrentPage: (page: string) => void;
-}
+export function Header() {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-export function Header({ currentPage, setCurrentPage }: HeaderProps) {
   const scrollToSection = (id: string) => {
-    if (currentPage !== "home") {
-      window.location.hash = "";
-      setCurrentPage("home");
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
@@ -27,19 +26,17 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
   };
 
   const navigateToDownload = () => {
-    window.location.hash = "download";
-    setCurrentPage("download");
+    navigate("/download");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const navigateToHome = () => {
-    window.location.hash = "";
-    setCurrentPage("home");
+    navigate("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -51,23 +48,23 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
             <img src={bytoLogo} alt="Byto" className="w-8 h-8" />
             <span className="tracking-tight">byto</span>
           </button>
-          
+
           <nav className="hidden md:flex items-center gap-8">
-            <button 
+            <button
               onClick={() => scrollToSection("features")}
               className="text-gray-400 hover:text-white transition-colors"
             >
               Features
             </button>
-            <button 
+            <button
               onClick={navigateToDownload}
               className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
             >
               Download
             </button>
           </nav>
-          
-          <button 
+
+          <button
             onClick={navigateToDownload}
             className="md:hidden px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
           >
