@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Download, List, Settings, BarChart3, FileText, PlayCircle, FolderOpen, Palette } from "lucide-react";
+import { Download, List, Settings, BarChart3, FileText, PlayCircle, FolderOpen, Palette, ListChecks, ListOrdered, Scissors, Music, Cookie } from "lucide-react";
 
 export function Features() {
   const features = [
@@ -10,27 +10,57 @@ export function Features() {
       color: "blue"
     },
     {
-      icon: List,
-      title: "Multiple URLs at Once",
-      description: "Add several media links and start all together with one click.",
-      color: "green"
-    },
-    {
       icon: Settings,
       title: "Quality Selection",
       description: "Choose preferred quality with ease from an intuitive dropdown.",
-      color: "blue"
+      color: "green"
     },
     {
-      icon: BarChart3,
-      title: "Real-Time Progress Tracking",
-      description: "See speed, file size, logs, and status indicators updated in real-time.",
+      icon: List,
+      title: "Multiple URLs at Once",
+      description: "Add several media links and start all together with one click.",
       color: "orange"
     },
     {
       icon: PlayCircle,
       title: "Pause / Resume / Stop",
       description: "Control individual tasks or stop everything with precision controls.",
+      color: "green"
+    },
+    {
+      icon: BarChart3,
+      title: "Real-Time Progress Tracking",
+      description: "See speed, file size, logs, and status indicators updated in real-time.",
+      color: "blue"
+    },
+    {
+      icon: Music,
+      title: "Audio Only",
+      description: "Extract and download only the audio track from videos.",
+      color: "orange"
+    },
+    {
+      icon: Scissors,
+      title: "Media Range",
+      description: "Download a specific time range of a video or audio file.",
+      color: "blue"
+    },
+    {
+      icon: ListChecks,
+      title: "Specific Videos",
+      description: "Select and download specific videos from a playlist.",
+      color: "green"
+    },
+    {
+      icon: ListOrdered,
+      title: "Playlist Range",
+      description: "Download a specific range of videos from any playlist.",
+      color: "orange"
+    },
+    {
+      icon: Cookie,
+      title: "Cookie Support",
+      description: "Support for cookies to enable authorized downloads.",
       color: "green"
     },
     {
