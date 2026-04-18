@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Download, List, Settings, BarChart3, FileText, PlayCircle, FolderOpen, Palette, ListChecks, ListOrdered, Scissors, Music, Cookie } from "lucide-react";
+import { Download, List, Settings, BarChart3, FileText, PlayCircle, FolderOpen, Palette, ListChecks, ListOrdered, Scissors, Music, Cookie, Subtitles } from "lucide-react";
 
 export function Features() {
   const features = [
@@ -62,6 +62,12 @@ export function Features() {
       title: "Cookie Support",
       description: "Support for cookies to enable authorized downloads.",
       color: "green"
+    },
+    {
+      icon: Subtitles,
+      title: "Subtitles Download",
+      description: "Automatically extract and download subtitles for supported media.",
+      color: "orange"
     },
     {
       icon: FolderOpen,
